@@ -25,10 +25,6 @@ function applyContent() {
       link.hidden = true;
     }
   });
-  if (profile.email) {
-    document.getElementById("footer-email").innerHTML = `${profile.email} <span>↗</span>`;
-  }
-
   const githubLink = document.getElementById("github-link");
   if (profile.github) {
     githubLink.href = profile.github;
