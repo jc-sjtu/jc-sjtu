@@ -3,7 +3,7 @@ const publications = content.publications;
 
 /** Fill the page from the human-readable settings in content.js. */
 function applyContent() {
-  const { profile, about, awards, service } = content;
+  const { profile, about, service } = content;
   const nameParts = profile.name.trim().split(/\s+/);
   const lastName = nameParts.pop();
 
@@ -45,14 +45,6 @@ function applyContent() {
   document.getElementById("about-headline").innerHTML = about.headline;
   document.getElementById("about-paragraphs").innerHTML = about.paragraphs
     .map((paragraph) => `<p>${paragraph}</p>`)
-    .join("");
-
-  document.getElementById("awards-list").innerHTML = awards
-    .map(
-      (item, index) => `<div class="award reveal delay-${Math.min(index, 3)}">
-        <span>${item.year}</span><h3>${item.organization}</h3><p>${item.award}</p>
-      </div>`,
-    )
     .join("");
 
   document.getElementById("service-list").innerHTML = service

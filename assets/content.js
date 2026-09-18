@@ -200,12 +200,12 @@ window.SITE_CONTENT = {
   //   },
   // ],
 
-  awards: [
-    { year: "2026", organization: "ICML", award: "Silver Reviewer" },
-    { year: "2024", organization: "ISCA", award: "Best Paper Nominee" },
-    { year: "2023", organization: "HPCC", award: "Best Paper Award" },
-    { year: "2023", organization: "Euro-Par", award: "Best Paper Nominee" },
-  ],
+  // awards: [
+  //   { year: "2026", organization: "ICML", award: "Silver Reviewer" },
+  //   { year: "2024", organization: "ISCA", award: "Best Paper Nominee" },
+  //   { year: "2023", organization: "HPCC", award: "Best Paper Award" },
+  //   { year: "2023", organization: "Euro-Par", award: "Best Paper Nominee" },
+  // ],
 
   service: [
     {
