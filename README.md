@@ -16,6 +16,9 @@ The workflow in `.github/workflows/pages.yml` deploys every push to `main`. In t
 
 ## Updating content
 
-- Page copy and structure: `index.html`
-- Publication data and interactions: `assets/main.js`
+- **All personal information and publications: `assets/content.js`**
+- Page structure: `index.html`
+- Interactions: `assets/main.js`
 - Visual design: `assets/style.css`
+
+For ordinary updates, you only need to edit `assets/content.js`. It is divided into clearly labelled sections for profile information, biography, research areas, publications, experience, awards, and service. No build step is required—save the file and refresh the browser.

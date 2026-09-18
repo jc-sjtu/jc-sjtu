@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Jiacheng Liu — Associate Professor at Shanghai Jiao Tong University. Research in efficient AI, crowd intelligence, and intelligent computing systems.">
+  <meta name="description" content="Jiacheng Liu — Associate Professor at Shanghai Jiao Tong University, working on efficient and reliable AI systems.">
   <meta name="theme-color" content="#f4f0e8">
   <meta property="og:title" content="Jiacheng Liu">
   <meta property="og:description" content="Associate Professor at Shanghai Jiao Tong University — Efficient AI, Crowd Intelligence, and Intelligent Computing Systems.">
@@ -13,17 +13,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=Manrope:wght@400;500;600;700&amp;family=Newsreader:opsz,wght@6..72,500;6..72,600&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/content.js" defer></script>
   <script src="assets/main.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
-    <a class="brand" href="#top" aria-label="Jiacheng Liu, home"><span class="brand-mark">JL</span><span>Jiacheng Liu</span></a>
+    <a class="brand" href="#top" aria-label="Jiacheng Liu, home"><span class="brand-mark" id="brand-initials">JL</span><span id="brand-name">Jiacheng Liu</span></a>
     <nav class="desktop-nav" aria-label="Primary navigation">
       <a href="#about" data-i18n="nav.about">About</a>
-      <a href="#research" data-i18n="nav.research">Research</a>
       <a href="#publications" data-i18n="nav.publications">Publications</a>
-      <a href="#experience" data-i18n="nav.experience">Experience</a>
       <a href="#service" data-i18n="nav.service">Service</a>
     </nav>
     <div class="header-actions">
@@ -36,8 +35,8 @@
   </header>
 
   <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
-    <a href="#about" data-i18n="nav.about">About</a><a href="#research" data-i18n="nav.research">Research</a>
-    <a href="#publications" data-i18n="nav.publications">Publications</a><a href="#experience" data-i18n="nav.experience">Experience</a>
+    <a href="#about" data-i18n="nav.about">About</a>
+    <a href="#publications" data-i18n="nav.publications">Publications</a>
     <a href="#service" data-i18n="nav.service">Service</a>
   </div>
 
@@ -45,19 +44,19 @@
     <section class="hero" id="top">
       <div class="hero-grid"></div>
       <div class="hero-content reveal">
-        <p class="eyebrow" data-i18n="hero.eyebrow">ASSOCIATE PROFESSOR · SHANGHAI</p>
-        <h1>Jiacheng <em>Liu</em></h1>
-        <p class="hero-lede" data-i18n="hero.lede">I build efficient and reliable AI systems—from the intelligence in data and models to the infrastructure that makes them run.</p>
+        <p class="eyebrow" id="hero-role">ASSOCIATE PROFESSOR · SHANGHAI</p>
+        <h1 id="hero-name">Jiacheng <em>Liu</em></h1>
+        <p class="hero-lede" id="hero-tagline">I build efficient and reliable AI systems—from the intelligence in data and models to the infrastructure that makes them run.</p>
         <div class="hero-links">
-          <a class="button primary" href="mailto:liujiacheng@sjtu.edu.cn"><span data-i18n="hero.contact">Get in touch</span><span aria-hidden="true">↗</span></a>
+          <a class="button primary email-link" href="mailto:liujiacheng@sjtu.edu.cn"><span>Get in touch</span><span aria-hidden="true">↗</span></a>
           <a class="button ghost" href="#publications"><span data-i18n="hero.work">Explore my work</span><span aria-hidden="true">↓</span></a>
         </div>
       </div>
       <div class="hero-aside reveal delay-1">
-        <div class="portrait" aria-label="Jiacheng Liu monogram"><span>JL</span><small>JIA CHENG</small></div>
-        <div class="status"><span></span><p data-i18n="hero.status">Open to research collaboration<br>and prospective students</p></div>
+        <div class="portrait" aria-label="Jiacheng Liu monogram"><span id="portrait-initials">JL</span><small id="portrait-name">JIA CHENG</small></div>
+        <div class="status"><span></span><p id="availability">Open to research collaboration<br>and prospective students</p></div>
       </div>
-      <div class="hero-foot reveal delay-2">
+      <div class="hero-foot reveal delay-2" id="statistics">
         <span>31 <small data-i18n="stats.ccfa">CCF-A papers</small></span>
         <span>25 <small data-i18n="stats.lead">first / corresponding author</small></span>
         <span>15 <small data-i18n="stats.q1">JCR Q1 papers</small></span>
@@ -67,49 +66,25 @@
     <section class="section intro" id="about">
       <div class="section-label reveal"><span>01</span><span data-i18n="nav.about">About</span></div>
       <div class="intro-copy reveal">
-        <p class="large-copy" data-i18n="about.lede">My research sits at the intersection of <em>efficient AI</em> and <em>intelligent computing systems</em>. I study how to make models reason with less computation, learn from imperfect human signals, and operate reliably under real-world constraints.</p>
-        <div class="about-columns">
+        <p class="large-copy" id="about-headline">My research sits at the intersection of <em>efficient AI</em> and <em>intelligent computing systems</em>. I study how to make models reason with less computation, learn from imperfect human signals, and operate reliably under real-world constraints.</p>
+        <div class="about-columns" id="about-paragraphs">
           <p data-i18n="about.p1">I am an Associate Professor at the Global Institute of Future Technology, Shanghai Jiao Tong University, and a Postdoctoral Fellow at the Hong Kong Generative AI Research & Development Center (HKGAI).</p>
           <p data-i18n="about.p2">Previously, I was a Postdoctoral Fellow in Computer Science and Engineering at CUHK. I received my Ph.D. in Computer Science and Technology from Shanghai Jiao Tong University.</p>
         </div>
       </div>
     </section>
 
-    <section class="section research-section" id="research">
-      <div class="section-label light reveal"><span>02</span><span data-i18n="nav.research">Research</span></div>
-      <div class="research-heading reveal"><h2 data-i18n="research.title">Three layers of<br><em>intelligent computing</em></h2><p data-i18n="research.desc">A systems view of AI: improve the data, streamline the model, and optimize the machine beneath it.</p></div>
-      <div class="research-list">
-        <article class="research-card reveal"><span class="card-index">01</span><div class="research-icon"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="19" cy="21" r="8"/><circle cx="45" cy="19" r="6"/><circle cx="43" cy="45" r="9"/><path d="m26 22 13-2M23 28l14 11M44 25l-1 11"/></svg></div><h3 data-i18n="research.r1title">Crowd Intelligence</h3><p data-i18n="research.r1desc">Truth inference, label aggregation, machine teaching, and robust human–AI knowledge fusion.</p><div class="tags"><span>Truth Inference</span><span>Data-centric AI</span><span>GNN</span></div></article>
-        <article class="research-card reveal delay-1"><span class="card-index">02</span><div class="research-icon"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M14 19h36v26H14zM22 27h20M22 35h13"/><path d="M22 13v6M32 13v6M42 13v6M22 45v6M32 45v6M42 45v6"/></svg></div><h3 data-i18n="research.r2title">Efficient Foundation Models</h3><p data-i18n="research.r2desc">Adaptive reasoning, model routing, MoE inference, KV-cache compression, and low-bit quantization.</p><div class="tags"><span>LLM Reasoning</span><span>MoE</span><span>Compression</span></div></article>
-        <article class="research-card reveal delay-2"><span class="card-index">03</span><div class="research-icon"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M12 42h40M17 42V27h9v15M28 42V18h9v24M39 42V23h9v19"/><path d="m14 20 13-7 9 3 14-8"/></svg></div><h3 data-i18n="research.r3title">Intelligent Systems</h3><p data-i18n="research.r3desc">AI-assisted resource management for cloud, edge, autonomous devices, and space–terrestrial networks.</p><div class="tags"><span>AI Systems</span><span>Edge</span><span>Scheduling</span></div></article>
-      </div>
-    </section>
-
     <section class="section publications" id="publications">
-      <div class="section-label reveal"><span>03</span><span data-i18n="nav.publications">Publications</span></div>
-      <div class="pub-header reveal"><div><h2 data-i18n="pub.title">Selected work</h2><p data-i18n="pub.note">* equal contribution · † corresponding author</p></div><div class="filters" role="group" aria-label="Filter publications"><button class="active" data-filter="all" data-i18n="pub.all">All</button><button data-filter="models" data-i18n="pub.models">Foundation models</button><button data-filter="crowd" data-i18n="pub.crowd">Crowd intelligence</button><button data-filter="systems" data-i18n="pub.systems">Systems</button></div></div>
+      <div class="section-label reveal"><span>02</span><span data-i18n="nav.publications">Publications</span></div>
+      <div class="pub-header reveal"><div><h2>Recent Selected Works</h2><p>* equal contribution · † corresponding author</p></div></div>
       <div class="pub-list" id="pub-list"></div>
       <button class="show-more reveal" id="show-more"><span data-i18n="pub.more">Show more publications</span><span>＋</span></button>
     </section>
 
-    <section class="section timeline-section" id="experience">
-      <div class="section-label reveal"><span>04</span><span data-i18n="nav.experience">Experience</span></div>
-      <div class="timeline-wrap">
-        <div class="timeline-intro reveal"><h2 data-i18n="experience.title">Academic journey</h2><p data-i18n="experience.desc">Across Shanghai and Hong Kong, working on the algorithms and systems behind practical intelligence.</p></div>
-        <ol class="timeline">
-          <li class="reveal"><span class="time">2026 — <span data-i18n="common.now">Now</span></span><div><h3 data-i18n="experience.e1role">Associate Professor</h3><p data-i18n="experience.e1place">Global Institute of Future Technology<br>Shanghai Jiao Tong University</p></div></li>
-          <li class="reveal"><span class="time">2025 — <span data-i18n="common.now">Now</span></span><div><h3 data-i18n="experience.e2role">Postdoctoral Fellow</h3><p data-i18n="experience.e2place">Hong Kong Generative AI R&D Center<br>Advisors: Prof. Yike Guo & Prof. Wei Xue</p></div></li>
-          <li class="reveal"><span class="time">2022 — 2025</span><div><h3 data-i18n="experience.e3role">Postdoctoral Fellow</h3><p data-i18n="experience.e3place">The Chinese University of Hong Kong<br>Advisor: Prof. Pheng-Ann Heng</p></div></li>
-          <li class="reveal"><span class="time">2017 — 2022</span><div><h3 data-i18n="experience.e4role">Ph.D. in Computer Science</h3><p data-i18n="experience.e4place">Shanghai Jiao Tong University<br>Advisor: Prof. Feilong Tang</p></div></li>
-          <li class="reveal"><span class="time">2011 — 2017</span><div><h3 data-i18n="experience.e5role">M.S. & B.S. in Software Engineering</h3><p data-i18n="experience.e5place">Shanghai Jiao Tong University · M.S.<br>Dalian University of Technology · B.S.</p></div></li>
-        </ol>
-      </div>
-    </section>
-
     <section class="section recognition">
-      <div class="section-label light reveal"><span>05</span><span data-i18n="awards.label">Recognition</span></div>
+      <div class="section-label light reveal"><span>03</span><span data-i18n="awards.label">Recognition</span></div>
       <div class="award-lede reveal"><h2 data-i18n="awards.title">Selected awards</h2><p data-i18n="awards.desc">Recognition for research, reviewing, and teaching.</p></div>
-      <div class="award-grid">
+      <div class="award-grid" id="awards-list">
         <div class="award reveal"><span>2026</span><h3>ICML</h3><p data-i18n="awards.a1">Silver Reviewer</p></div>
         <div class="award reveal delay-1"><span>2024</span><h3>ISCA</h3><p data-i18n="awards.a2">Best Paper Nominee</p></div>
         <div class="award reveal delay-2"><span>2023</span><h3>HPCC</h3><p data-i18n="awards.a3">Best Paper Award</p></div>
@@ -118,14 +93,14 @@
     </section>
 
     <section class="section service" id="service">
-      <div class="section-label reveal"><span>06</span><span data-i18n="nav.service">Service</span></div>
-      <div class="service-content reveal"><h2 data-i18n="service.title">Serving the research community</h2><div class="service-grid"><div><span class="mini-label" data-i18n="service.org">ORGANIZATION</span><h3>SustainCom 2026</h3><p data-i18n="service.co">Program Co-chair</p></div><div><span class="mini-label" data-i18n="service.pc">PROGRAM COMMITTEES</span><h3>ICML · NeurIPS · ICLR</h3><p>AAAI · ACM MM · KDD · The Web Conference · AISTATS · ACL ARR</p></div><div><span class="mini-label" data-i18n="service.review">JOURNAL REVIEWING</span><h3>IEEE TC · TNNLS · TSUSC</h3><p>Information Fusion · Neural Networks · Briefings in Bioinformatics · Information Sciences</p></div></div></div>
+      <div class="section-label reveal"><span>04</span><span data-i18n="nav.service">Service</span></div>
+      <div class="service-content reveal"><h2>Serving the research community</h2><div class="service-grid" id="service-list"><div><span class="mini-label">ORGANIZATION</span><h3>SustainCom 2026</h3><p>Program Co-chair</p></div><div><span class="mini-label">PROGRAM COMMITTEES</span><h3>ICML · NeurIPS · ICLR</h3><p>AAAI · ACM MM · KDD · The Web Conference · AISTATS · ACL ARR</p></div><div><span class="mini-label">JOURNAL REVIEWING</span><h3>IEEE TC · TNNLS · TSUSC</h3><p>Information Fusion · Neural Networks · Briefings in Bioinformatics · Information Sciences</p></div></div></div>
     </section>
   </main>
 
   <footer>
-    <div><p class="footer-kicker" data-i18n="footer.kicker">Let’s build useful intelligence.</p><a class="footer-email" href="mailto:liujiacheng@sjtu.edu.cn">liujiacheng@sjtu.edu.cn <span>↗</span></a></div>
-    <div class="footer-meta"><p data-i18n="footer.address">Global Institute of Future Technology<br>Shanghai Jiao Tong University · Shanghai, China</p><div><a href="https://github.com/jc-sjtu" target="_blank" rel="noreferrer">GitHub ↗</a><a href="#top" data-i18n="footer.top">Back to top ↑</a></div></div>
+    <div><p class="footer-kicker">Let’s build useful intelligence.</p><a class="footer-email email-link" id="footer-email" href="mailto:liujiacheng@sjtu.edu.cn">liujiacheng@sjtu.edu.cn <span>↗</span></a></div>
+    <div class="footer-meta"><p id="footer-address">Global Institute of Future Technology<br>Shanghai Jiao Tong University · Shanghai, China</p><div><a id="github-link" href="https://github.com/jc-sjtu" target="_blank" rel="noreferrer">GitHub ↗</a><a href="#top">Back to top ↑</a></div></div>
     <p class="copyright">© <span id="year"></span> Jiacheng Liu</p>
   </footer>
 </body>

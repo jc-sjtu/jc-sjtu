@@ -1,33 +1,74 @@
-const publications = [
-  {year:'2026',type:'models',venue:'ICML · CCF A',title:'Causal Dependency-Aware Unsupervised Routing for Large Reasoning Models',authors:'Jiacheng Liu, Hao Liu, Xiaofeng Hou, Wei Xue, Yike Guo'},
-  {year:'2026',type:'models',venue:'ACL · CCF A',title:'Adaptive Spatial and Temporal Redundancy Optimization for Efficient Reasoning in Large Language Models',authors:'Tianle Chen, Pengyu Cheng, Qiyuan Zhu, Jiacheng Wang, Bei Liu, et al., Jiacheng Liu†'},
-  {year:'2026',type:'crowd',venue:'ICLR · CCF A',title:'Towards a Foundation Model for Crowdsourced Label Aggregation',authors:'Hao Liu*, Jiacheng Liu*†, Feilong Tang, Long Chen, Jiadi Yu, et al.'},
-  {year:'2026',type:'models',venue:'ACM CSUR',title:'A Survey on Inference Optimization Techniques for Mixture of Experts Models',authors:'Jiacheng Liu, Peng Tang, Wenfeng Wang, Yuhang Ren, Xiaofeng Hou, et al.'},
-  {year:'2026',type:'models',venue:'ASPLOS · CCF A',title:'MoE-APEX: An Efficient MoE Inference System with Adaptive Precision Expert Offloading',authors:'Peng Tang*, Jiacheng Liu*, Xiaofeng Hou, Yifei Pu, Jing Wang, et al.'},
-  {year:'2026',type:'models',venue:'AAAI · CCF A',title:'AdaReason: Progressive Training of Multi-LoRA Adapters for Budget-Adaptive Language Reasoning Models',authors:'Jiacheng Wang, Tianle Chen, Pengyu Cheng, Xiaofeng Hou, Jiacheng Liu†'},
-  {year:'2026',type:'models',venue:'AAAI · CCF A',title:'DesireKV: Decoupling Sensitivity and Importance for Reasoning-Aware KV Cache Compression',authors:'Pengyu Cheng, Jiacheng Wang, Tianle Chen, Bei Liu, Xiaofeng Hou, Jiacheng Liu†'},
-  {year:'2026',type:'crowd',venue:'EACL Findings',title:'Aggregating Crowd of LLMs for Cost-Effective Data Annotation',authors:'Jiacheng Liu, Xiaofeng Hou'},
-  {year:'2025',type:'systems',venue:'USENIX ATC · CCF A',title:'SpaceExit: Enabling Efficient Adaptive Computing in Space with Early Exits',authors:'Jiacheng Liu, Xiaozhi Zhu, Tongqiao Xu, Xiaofeng Hou, Chao Li'},
-  {year:'2025',type:'crowd',venue:'IEEE TMC · CCF A',title:'Noisy Multi-Label Aggregation with Self-Supervised Graph Transformer in Mobile Crowdsourcing',authors:'Jiacheng Liu, Feilong Tang, Hao Liu, Long Chen, Yanmin Zhu, et al.'},
-  {year:'2025',type:'crowd',venue:'IEEE TMC · CCF A',title:'BAT: A Versatile Bipartite Attention-based Approach for Comprehensive Truth Inference',authors:'Jiacheng Liu, Feilong Tang, Hao Liu, Long Chen, Yichuan Yu, et al.'},
-  {year:'2025',type:'crowd',venue:'Advanced Science',title:'scHeteroNet: A Heterophily-Aware Graph Neural Network for Accurate Cell Type Annotation and Novel Cell Detection',authors:'Jiacheng Liu, Xingyu Fan, Chunbin Gu, Yaodong Yang, Bian Wu, et al.'},
-  {year:'2025',type:'systems',venue:'IEEE TSC · CCF A',title:'An Adaptive and Interpretable Congestion Control Service Based on Multi-Objective Reinforcement Learning',authors:'Jiacheng Liu, Xu Li, Feilong Tang, Long Chen, Yanmin Zhu, et al.'},
-  {year:'2024',type:'models',venue:'EMNLP Findings',title:'LoRAExit: Empowering Dynamic Modulation of LLMs in Resource-limited Settings using Low-rank Adapters',authors:'Jiacheng Liu, Peng Tang, Xiaofeng Hou, Chao Li, Pheng-Ann Heng'},
-  {year:'2024',type:'crowd',venue:'ICDE · CCF A',title:'Graph Contrastive Learning for Truth Inference',authors:'Hao Liu*, Jiacheng Liu*, Feilong Tang, Peng Li, Long Chen, et al.'},
-  {year:'2023',type:'crowd',venue:'IEEE JSAC · CCF A',title:'Practical Network Modeling Using Weak Supervision Signals for Human-Centric Networking in Metaverse',authors:'Jiacheng Liu, Feilong Tang, Zhijian Zheng, Hao Liu, Xiaofeng Hou, et al.'},
-  {year:'2023',type:'crowd',venue:'ECAI · CCF B',title:'Label Aggregation with Self-Supervision Enhanced Graph Transformer',authors:'Jiacheng Liu, Feilong Tang, Xiaofeng Hou'},
-  {year:'2023',type:'systems',venue:'IWQoS · CCF B',title:'EAGLE: Heterogeneous GNN-based Network Performance Analysis',authors:'Jiacheng Liu, Feilong Tang, Long Chen, Xu Li, Jiadi Yu, et al.'},
-  {year:'2023',type:'systems',venue:'Information Sciences',title:'INFER: Distilling Knowledge From Human-Generated Rules With Uncertainty for STINs',authors:'Jiacheng Liu, Feilong Tang, Yanmin Zhu, Jiadi Yu, Long Chen, Ming Gao'},
-  {year:'2021',type:'crowd',venue:'ICME · CCF B',title:'Truth Inference with Bipartite Attention Graph Neural Network from a Comprehensive View',authors:'Jiacheng Liu, Feilong Tang, Jielong Huang'},
-  {year:'2021',type:'crowd',venue:'Information Sciences',title:'Exploiting Predicted Answer in Label Aggregation to Make Better Use of the Crowd Wisdom',authors:'Jiacheng Liu, Feilong Tang, Long Chen, Yanmin Zhu'},
-  {year:'2020',type:'crowd',venue:'AAAI · CCF A · Oral',title:'Fine-Grained Machine Teaching with Attention Modeling',authors:'Jiacheng Liu, Xiaofeng Hou, Feilong Tang'}
-];
+const content = window.SITE_CONTENT;
+const publications = content.publications;
 
-let filter='all', expanded=false;
+/** Fill the page from the human-readable settings in content.js. */
+function applyContent() {
+  const { profile, about, awards, service } = content;
+  const nameParts = profile.name.trim().split(/\s+/);
+  const lastName = nameParts.pop();
+
+  document.title = profile.name;
+  document.querySelector('meta[property="og:title"]').content = profile.name;
+  document.getElementById("brand-initials").textContent = profile.initials;
+  document.getElementById("brand-name").textContent = profile.name;
+  document.getElementById("hero-name").innerHTML = `${nameParts.join(" ")} <em>${lastName}</em>`;
+  document.getElementById("hero-role").textContent = `${profile.role} · ${profile.location}`.toUpperCase();
+  document.getElementById("hero-tagline").innerHTML = profile.tagline;
+  document.getElementById("portrait-initials").textContent = profile.initials;
+  document.getElementById("portrait-name").textContent = profile.name.toUpperCase();
+  document.getElementById("availability").innerHTML = profile.availability;
+
+  document.querySelectorAll(".email-link").forEach((link) => {
+    if (profile.email) {
+      link.href = `mailto:${profile.email}`;
+    } else {
+      link.hidden = true;
+    }
+  });
+  if (profile.email) {
+    document.getElementById("footer-email").innerHTML = `${profile.email} <span>↗</span>`;
+  }
+
+  const githubLink = document.getElementById("github-link");
+  if (profile.github) {
+    githubLink.href = profile.github;
+  } else {
+    githubLink.hidden = true;
+  }
+  document.getElementById("footer-address").innerHTML =
+    `${profile.department}<br>${profile.institution} · ${profile.location}`;
+
+  document.getElementById("statistics").innerHTML = profile.statistics
+    .map((item) => `<span>${item.number} <small>${item.label}</small></span>`)
+    .join("");
+
+  document.getElementById("about-headline").innerHTML = about.headline;
+  document.getElementById("about-paragraphs").innerHTML = about.paragraphs
+    .map((paragraph) => `<p>${paragraph}</p>`)
+    .join("");
+
+  document.getElementById("awards-list").innerHTML = awards
+    .map(
+      (item, index) => `<div class="award reveal delay-${Math.min(index, 3)}">
+        <span>${item.year}</span><h3>${item.organization}</h3><p>${item.award}</p>
+      </div>`,
+    )
+    .join("");
+
+  document.getElementById("service-list").innerHTML = service
+    .map(
+      (item) => `<div><span class="mini-label">${item.label}</span>
+        <h3>${item.heading}</h3><p>${item.details}</p></div>`,
+    )
+    .join("");
+}
+
+applyContent();
+
+let expanded=false;
 const list=document.getElementById('pub-list');
-function renderPublications(){const subset=publications.filter(p=>filter==='all'||p.type===filter);const visible=expanded?subset:subset.slice(0,8);list.innerHTML=visible.map(p=>`<article class="pub-item"><span class="pub-year">${p.year}</span><div><h3 class="pub-title">${p.title}</h3><p class="pub-authors">${p.authors}</p></div><span class="pub-venue">${p.venue}</span><span class="pub-arrow" aria-hidden="true">↗</span></article>`).join('');document.getElementById('show-more').style.display=subset.length>8?'flex':'none';}
+function renderPublications(){const visible=expanded?publications:publications.slice(0,8);list.innerHTML=visible.map(p=>`<article class="pub-item"><span class="pub-year">${p.year}</span><div><h3 class="pub-title">${p.link?`<a href="${p.link}" target="_blank" rel="noreferrer">${p.title}</a>`:p.title}</h3><p class="pub-authors">${p.authors}</p></div><span class="pub-venue">${p.venue}</span><span class="pub-arrow" aria-hidden="true">${p.link?'↗':''}</span></article>`).join('');document.getElementById('show-more').style.display=publications.length>8?'flex':'none';}
 const themeButton=document.getElementById('theme-toggle');const initialTheme=localStorage.getItem('theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.dataset.theme=initialTheme;themeButton.addEventListener('click',()=>{const theme=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=theme;localStorage.setItem('theme',theme)});
-document.querySelectorAll('.filters button').forEach(btn=>btn.addEventListener('click',()=>{document.querySelector('.filters .active').classList.remove('active');btn.classList.add('active');filter=btn.dataset.filter;expanded=false;renderPublications()}));
 document.getElementById('show-more').addEventListener('click',()=>{expanded=!expanded;renderPublications();document.querySelector('#show-more span').textContent=expanded?'Show fewer publications':'Show more publications'});
 const menu=document.getElementById('mobile-nav'),menuBtn=document.getElementById('menu-toggle');menuBtn.addEventListener('click',()=>{const open=menu.classList.toggle('open');menuBtn.setAttribute('aria-expanded',open);menu.setAttribute('aria-hidden',!open)});menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');menu.setAttribute('aria-hidden','true')}));
 const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}}),{threshold:.08});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
